@@ -1,6 +1,6 @@
 {
   "name": "solc-resolver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "solc resolver",
   "main": "src/index.js",
   "dependencies": {
