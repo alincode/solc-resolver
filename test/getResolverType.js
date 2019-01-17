@@ -3,12 +3,12 @@ chai.should();
 
 function test(path, type) {
   const solcResolver = require('../src');
-  let handerType = solcResolver.getHanderType(path);
-  handerType.should.be.a('string');
-  handerType.should.be.eq(type);
+  let resolverType = solcResolver.getResolverType(path);
+  resolverType.should.be.a('string');
+  resolverType.should.be.eq(type);
 }
 
-describe('getHanderType', () => {
+describe('getResolverType', () => {
 
   it('github', async () => {
     const path = 'https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol';

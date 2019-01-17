@@ -1,5 +1,5 @@
 const sources = require('./source');
-const getHanderType = require('./getHanderType');
+const getResolverType = require('./getResolverType');
 const getErrorMessage = require('./getErrorMessage');
 let previouslyHandled = {};
 
@@ -16,7 +16,7 @@ async function getImportContent(importPath) {
   let found = isFoundHander(importPath);
   if (!found) throw Error(getErrorMessage(importPath));
 
-  const handlerType = getHanderType(importPath);
+  const handlerType = getResolverType(importPath);
   const sourceHander = sources[handlerType];
   
   try {
@@ -42,5 +42,5 @@ function getResultFromImported(imported, importPath) {
 }
 
 function isFoundHander(url) {
-  return getHanderType(url) != undefined;
+  return getResolverType(url) != undefined;
 }

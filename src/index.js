@@ -1,6 +1,6 @@
 module.exports = {
   getImportContent: require('./getImportContent'),
   isLocalPath: require('./isLocalPath'),
-  getHanderType: require('./getHanderType'),
+  getResolverType: require('./getResolverType'),
   sourceHandlers: require('./source')
 };
