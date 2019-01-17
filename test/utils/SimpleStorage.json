@@ -1,0 +1,18 @@
+{
+"name": "SimpleStorage.sol",
+"path": "src/SimpleStorage.sol",
+"sha": "60e2bb486636ae2ca89635dc8362b9de17e433a6",
+"size": 261,
+"url": "https://api.github.com/repos/alincode/30-days-smart-contract/contents/src/SimpleStorage.sol?ref=master",
+"html_url": "https://github.com/alincode/30-days-smart-contract/blob/master/src/SimpleStorage.sol",
+"git_url": "https://api.github.com/repos/alincode/30-days-smart-contract/git/blobs/60e2bb486636ae2ca89635dc8362b9de17e433a6",
+"download_url": "https://raw.githubusercontent.com/alincode/30-days-smart-contract/master/src/SimpleStorage.sol",
+"type": "file",
+"content": "cHJhZ21hIHNvbGlkaXR5ID49MC40LjAgPDAuNi4wOwppbXBvcnQgIi4vb28v U2ltcGxlU3RvcmFnZTIuc29sIjsKCmNvbnRyYWN0IFNpbXBsZVN0b3JhZ2Ug ewogICAgdWludCBzdG9yZWREYXRhOwoKICAgIGZ1bmN0aW9uIHNldCh1aW50 IHgpIHB1YmxpYyB7CiAgICAgICAgc3RvcmVkRGF0YSA9IHg7CiAgICB9Cgog ICAgZnVuY3Rpb24gZ2V0KCkgcHVibGljIHZpZXcgcmV0dXJucyAodWludCkg ewogICAgICAgIHJldHVybiBzdG9yZWREYXRhOwogICAgfQp9 ",
+"encoding": "base64",
+"_links": {
+"self": "https://api.github.com/repos/alincode/30-days-smart-contract/contents/src/SimpleStorage.sol?ref=master",
+"git": "https://api.github.com/repos/alincode/30-days-smart-contract/git/blobs/60e2bb486636ae2ca89635dc8362b9de17e433a6",
+"html": "https://github.com/alincode/30-days-smart-contract/blob/master/src/SimpleStorage.sol"
+}
+}
