@@ -12,40 +12,51 @@ npm install solc-resolver
 
 ### Usage
 
-* getResolverType
+* require
 
 ```js
-const solcResolver = require('solc-resolver');
-const path = 'https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol';
-let resolverType = solcResolver.getResolverType(path);
-// github
-```
-
-* getImportContent
-
-```js
-const path = 'https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol';
-let content = await solcResolver.getImportContent(path);
+const ResolverEngine = require('solc-resolver'.resolverEngine;
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-github');
+resolverEngine.addResolver(resolveGithub);
+const uri = 'https://github.com/OpenZeppelin/openzeppelin-solidity/contracts/math/SafeMath.sol';
+const content = await resolverEngine.require(uri);
 ```
 
 ```js
+const ResolverEngine = require('solc-resolver'.resolverEngine;
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-http');
+resolverEngine.addResolver(resolveGithub);
 const path = 'http://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/math/SafeMath.sol';
-let content = await solcResolver.getImportContent(path);
+const content = await resolverEngine.require(uri);
 ```
 
 ```js
+const ResolverEngine = require('solc-resolver'.resolverEngine;
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-http');
+resolverEngine.addResolver(resolveGithub);
 const path = 'https://raw.githubusercontent.com/OpenZeppelin/openzeppelin-solidity/master/contracts/math/SafeMath.sol';
-let content = await solcResolver.getImportContent(path);
+const content = await resolverEngine.require(uri);
 ```
 
 ```js
+const ResolverEngine = require('solc-resolver'.resolverEngine;
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-ipfs');
+resolverEngine.addResolver(resolveGithub);
 const path = 'ipfs://QmTeW79w7QQ6Npa3b1d5tANreCDxF2iDaAPsDvW6KtLmfB/styles/jquery/jquery.min.js';
-let content = await solcResolver.getImportContent(path);
+const content = await resolverEngine.require(uri);
 ```
 
 ```js
+const ResolverEngine = require('solc-resolver'.resolverEngine;
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-swarm');
+resolverEngine.addResolver(resolveGithub);
 const path = 'bzz:/photoalbum.eth/';
-let content = await solcResolver.getImportContent(path);
+const content = await resolverEngine.require(uri);
 ```
 
 ## License

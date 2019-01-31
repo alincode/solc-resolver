@@ -1,10 +1,14 @@
-require('../utils/mock')();
+require('solcjs-mock')();
 
 const chai = require('chai');
 chai.should();
 
 const solcImport = require('solc-import');
-const solcResolver = require('../../src');
+
+const ResolverEngine = require('../../src/resolverEngine');
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-github');
+resolverEngine.addResolver(resolveGithub);
 
 describe('with solc-import combineSource', () => {
 
@@ -24,7 +28,7 @@ describe('with solc-import combineSource', () => {
     myDB.set('lib.sol', 'library L { function f() internal returns (uint) { return 7; } }');
 
     const getImportContent = async function (path) {
-      return myDB.has(path) ? myDB.get(path) : await solcResolver.getImportContent(path);
+      return myDB.has(path) ? myDB.get(path) : await resolverEngine.require(path);
     };
 
     let sources = await solcImport.combineSource(sourceCode, getImportContent);

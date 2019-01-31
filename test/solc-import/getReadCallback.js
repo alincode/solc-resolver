@@ -1,10 +1,14 @@
-require('../utils/mock')();
+require('solcjs-mock')();
 
 const chai = require('chai');
 chai.should();
 
 const solcImport = require('solc-import');
-const solcResolver = require('../../src');
+
+const ResolverEngine = require('../../src/resolverEngine');
+let resolverEngine = new ResolverEngine();
+let resolveGithub = require('resolve-github');
+resolverEngine.addResolver(resolveGithub);
 
 describe('getReadCallback', () => {
 
@@ -31,7 +35,7 @@ describe('getReadCallback', () => {
     myDB.set('lib.sol', libContent);
 
     const getImportContent = async function (path) {
-      return myDB.has(path) ? myDB.get(path) : await solcResolver.getImportContent(path);
+      return myDB.has(path) ? myDB.get(path) : await resolverEngine.require(path);
     };
 
     let readCallback = await solcImport.getReadCallback(sourceCode, getImportContent);

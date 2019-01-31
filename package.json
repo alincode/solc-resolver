@@ -16,7 +16,12 @@
     "fake-indexeddb": "^2.0.4",
     "mocha": "^5.2.0",
     "mock-browser": "^0.92.14",
-    "nyc": "^13.1.0"
+    "nyc": "^13.1.0",
+    "resolve-github": "^0.1.0",
+    "resolve-http": "0.0.1",
+    "resolve-ipfs": "0.0.2",
+    "resolve-swarm": "0.0.3",
+    "solcjs-mock": "0.0.1"
   },
   "scripts": {
     "lint": "eslint src",

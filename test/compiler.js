@@ -1,4 +1,4 @@
-// require('./utils/mock')();
+// require('solcjs-mock')();
 
 // const chai = require('chai');
 // chai.should();
@@ -33,7 +33,7 @@
 //     myDB.set('lib.sol', 'library L { function f() internal returns (uint) { return 7; } }');
 
 //     const getImportContent = async function (path) {
-//       return myDB.has(path) ? myDB.get(path) : await solcResolver.getImportContent(path);
+//       return myDB.has(path) ? myDB.get(path) : await solcResolver.require(path);
 //     };
 
 //     let output = await compiler(sourceCode, getImportContent);
