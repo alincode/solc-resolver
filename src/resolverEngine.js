@@ -3,16 +3,36 @@ module.exports = class ResolverEngine {
     this.resolvers = [];
     this.previouslyHandled = {};
   }
-  
-  // get data
-  async require(importPath) {
+
+  async getContent(url) {
     for (let resolve of this.resolvers) {
-      if (this.getResolverType(importPath) == resolve.type) {
-        const result = await resolve.parser(importPath);
+      if (this.getResolverType(url) == resolve.type) {
+        const result = await resolve.parser(url);
         if (result) return result;
       }
     }
     return;
+  }
+
+  // get data
+  async require(importPath) {
+    const imported = this.previouslyHandled[importPath];
+    // get source from cache
+    if (imported) {
+      let result = this.getResultFromImported(imported, importPath);
+      return result.content;
+    }
+
+    const handlerType = this.getResolverType(importPath);
+    const content = await this.getContent(importPath);
+
+    this.previouslyHandled[importPath] = {
+      content: content,
+      type: handlerType,
+      importPath
+    };
+
+    return content;
   }
 
   // chain pattern
