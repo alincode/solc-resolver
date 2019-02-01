@@ -4,7 +4,7 @@ module.exports = class ResolverEngine {
     this.previouslyHandled = {};
   }
   
-  async getContent(url, from) {
+  async getContent(url) {
     for (let resolve of this.resolvers) {
       if (this.getResolverType(url) == resolve.type) {
         const result = await resolve.parser(url);  
@@ -15,7 +15,7 @@ module.exports = class ResolverEngine {
   }
 
   // get data
-  async require(importPath, from) {
+  async require(importPath) {
     const imported = this.previouslyHandled[importPath];
     // get source from cache
     if (imported) {
@@ -24,7 +24,7 @@ module.exports = class ResolverEngine {
     }
 
     const handlerType = this.getResolverType(importPath);
-    const content = await this.getContent(importPath, from);
+    const content = await this.getContent(importPath);
     
     this.previouslyHandled[importPath] = {
       content: content,
