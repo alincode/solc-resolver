@@ -4,7 +4,7 @@
   "description": "solc resolver",
   "main": "src/index.js",
   "dependencies": {
-    "solc-import": "^0.0.1"
+    "solc-import": "^0.0.2"
   },
   "devDependencies": {
     "chai": "^4.2.0",
